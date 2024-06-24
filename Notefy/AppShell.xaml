@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Notefy.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Notefy.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+    
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="HomePage" />
+
+
+    <ShellContent
+        Title="Notes"
+        ContentTemplate="{DataTemplate views:NoteListPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Shopping List"
+        ContentTemplate="{DataTemplate views:ShoppingListPage}"
+        Route="ShoppingListPage" />
+
+    </FlyoutItem>
+
+</Shell>
+

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notefy.Views.AddUpdateNoteDetail"
+             Title="Add / Update Note">
+
+    <StackLayout Margin="10">
+        <VerticalStackLayout>
+            <Label Text="Heading" FontSize="15" />
+            <Entry Text="{Binding NoteDetail.NoteHeading}" Placeholder="Note Heading" />
+            <BoxView HeightRequest="0.7" Color="LightGray" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Description" FontSize="15" />
+            <Entry Text="{Binding NoteDetail.NoteDescription}" Placeholder="Note Description" />
+            <BoxView HeightRequest="0.7" Color="LightGray" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Date" FontSize="15" />
+            <DatePicker MinimumDate="04/01/2023"  Date="{Binding NoteDetail.NoteScheduleDT}" />
+            <BoxView HeightRequest="0.7" Color="LightGray" />
+        </VerticalStackLayout>
+
+        <Button Text="Save" Command="{Binding AddUpdateNoteCommand}"/>
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notefy.Views.HomePage"
+             Title="Home">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="20,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text=" Notefy " FontAttributes="Bold" 
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                TextColor="Navy"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to Notefy!"
+                TextColor="OrangeRed"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to Notefy"
+                FontSize="18"
+                FontAttributes="Bold"
+                FontFamily="gothic"
+                HorizontalOptions="Center" />
+            <Label
+                Text="Handle your Notes and Shopping List!"
+                TextColor="Navy"
+                HorizontalTextAlignment="Center"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Handle your Notes and Shopping List"
+                FontSize="15"
+                FontAttributes="Italic"
+                FontFamily="Arial"
+                HorizontalOptions="Center" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

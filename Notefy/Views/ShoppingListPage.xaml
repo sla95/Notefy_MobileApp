@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notefy.Views.ShoppingListPage"
+             xmlns:viewmodel="clr-namespace:Notefy.ViewModels"
+             x:DataType="viewmodel:ShoppingListViewModel"
+             Title="Shopping List Page">
+
+    <Grid RowDefinitions="10, Auto, *"
+          ColumnDefinitions=".80*, .20*"
+          Padding="10"
+          RowSpacing="10"
+          ColumnSpacing="5">
+
+
+        <Entry Placeholder="Enter an Item for shopping"
+               Text="{Binding Text}"
+               FontAttributes="Bold"
+               Grid.Row="1"/>
+
+        <Button Text="Add"
+                Command="{Binding AddCommand}"
+                Grid.Row="1"
+                Grid.Column="1"/>
+
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
+                        ItemsSource="{Binding Items}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type x:String}">
+
+
+                   <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text=" × " 
+                                       BackgroundColor="OrangeRed"
+                                       
+                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ShoppingListViewModel}}, Path=DeleteCommand}"
+                                       CommandParameter="{Binding .}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+
+                        <Grid Padding="0,0">
+                        <Frame Margin="1" BackgroundColor="AliceBlue" BorderColor="DarkBlue" CornerRadius="0">
+                            <Label Text="{Binding .}"
+                                   FontSize="14"/>
+
+                        </Frame>
+
+                        </Grid>
+                    </SwipeView>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>
